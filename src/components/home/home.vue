@@ -1,5 +1,14 @@
 <template>
   <div>
-    <p></p>
+    <p>login</p>
   </div>
 </template>
+<script>
+export default {
+  data () {
+    return {}
+  }
+}
+</script>
+<style>
+</style>
