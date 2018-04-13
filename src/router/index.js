@@ -61,7 +61,7 @@ router.beforeEach((to, from, next) => { // 1.添加全局路由导航守卫
     next()
   } else {
   // 检查登录状态令牌
-    const token = window.localStorage.getItem('admin-token')
+    const token = window.localStorage.getItem('user-info')
     if (!token) { // 2.2.1 无令牌，则让其登陆去
       next({
         name: 'login'
