@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import {getUserInfo} from '@/assets/js/auth'
 import Login from '@/components/login/login' // @是src路径的别名，webpack配置的
 import Home from '@/components/home/home' // @是src路径的别名，webpack配置
 // 用户管理组件
@@ -61,8 +62,7 @@ router.beforeEach((to, from, next) => { // 1.添加全局路由导航守卫
     next()
   } else {
   // 检查登录状态令牌
-    const token = window.localStorage.getItem('user-info')
-    if (!token) { // 2.2.1 无令牌，则让其登陆去
+    if (!getUserInfo()) { // 2.2.1 无令牌，则让其登陆去
       next({
         name: 'login'
       })

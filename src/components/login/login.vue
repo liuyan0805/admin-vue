@@ -32,13 +32,15 @@ export default {
   },
   methods: {
     async login () {
+      // console.log(1)
       // 1.采集表单数据
       // 2.表单验证
       // 3.发送请求执行登录操作
       // 4.根据响应做交互
       const res = await this.$http.post('/login', this.userForm)
+      console.log(res)
       const data = res.data
-      // console.log(data)
+      console.log(data)
       if (data.meta.status === 200) {
         // 登录成功，将服务器签发给用户的Token身份令牌记录到localStorage中
         // 其他需要使用Token的都去本地存储获取
